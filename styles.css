@@ -1,0 +1,142 @@
+/* Styles généraux */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+    color: #ffffff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+header {
+    padding: 30px 20px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+h1, h2, h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #ffcc00;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+nav ul li a:hover {
+    color: #ffffff;
+    text-shadow: 0px 0px 15px rgba(255, 204, 0, 0.9);
+}
+
+/* Section Hero avec effet Parallax */
+.hero {
+    height: 100vh;
+    background: url('img/hero-bg.jpg') center/cover no-repeat fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Section compétences animées */
+.skills {
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #1b1b2f, #3a506b);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.skills ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 30px;
+}
+
+.skills li {
+    background: linear-gradient(45deg, #ffcc00, #ff6f00);
+    padding: 15px 30px;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0px 0px 15px rgba(255, 204, 0, 0.6);
+    animation: floaty 3s infinite ease-in-out;
+}
+
+@keyframes floaty {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Nouveau bouton interactif */
+button {
+    padding: 15px 35px;
+    background: linear-gradient(90deg, #ffcc00, #ff6f00);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.4s;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, rgba(255, 255, 255, 0) 70%);
+    top: -100%;
+    left: -100%;
+    transition: 0.4s;
+    opacity: 0;
+}
+
+button:hover::before {
+    opacity: 1;
+    transform: scale(1.5);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #ff6f00, #ffcc00);
+    box-shadow: 0px 0px 20px rgba(255, 204, 0, 1);
+    transform: scale(1.05);
+}
